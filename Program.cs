@@ -1,31 +1,30 @@
-﻿namespace inheritance
+﻿namespace polymorphism
 {
-    class Animal
-    {
-        public void Eat()
-        {
-            Console.WriteLine("animal eating");
-        }
-    }
-    class Dog : Animal
-    {
-        public void Bark()
-        {
-            Console.WriteLine("woof,woof");
-        }
 
+    class Shape
+    {
+        public virtual void Draw()
+        {
+            Console.WriteLine("Drawing Shape");
+        }
     }
+    class Circle : Shape
+    {
+        public override void Draw()
+        {
+            // base.Draw();
+            Console.WriteLine("drawing  circle");
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Dog dog = new Dog();
-            dog.Eat();
-            dog.Bark();
+            Shape s = new Circle();
+            s.Draw();
         }
     }
-
-
 
 
 
