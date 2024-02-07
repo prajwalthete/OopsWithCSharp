@@ -1,17 +1,22 @@
-﻿namespace inheritance
+﻿namespace encapsulation
 {
-    class Animal
+    class Student
     {
-        public void Eat()
+        private int Id;
+        private string Name;
+
+
+        public int SetId(int id)
         {
-            Console.WriteLine("animal eating");
+            return Id = id;
         }
-    }
-    class Dog : Animal
-    {
-        public void Bark()
+        public string SetName(string name)
         {
-            Console.WriteLine("woof,woof");
+            return Name = name;
+        }
+        public void printDetail()
+        {
+            Console.WriteLine(this.Name + ": " + this.Id);
         }
 
     }
@@ -19,15 +24,12 @@
     {
         static void Main(string[] args)
         {
-            Dog dog = new Dog();
-            dog.Eat();
-            dog.Bark();
+            Student s = new Student();
+            s.SetId(1);
+            s.SetName("Test");
+            s.printDetail();
+
         }
     }
 
-
-
-
-
 }
-
